@@ -1,0 +1,95 @@
+﻿@page
+@model WeatherTrackerWeb.Pages.IndexModel
+@{
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weatherChoosePanel">
+            <form class="weatherChooseForm" method="get">
+                <label for="citySelect">Město:</label>
+                <select id="citySelect" name="citySelect">
+                    <option value="Brno" @(Model.CurrentCity == "Brno" ? "selected" : "")> Brno</option>
+                    <option value="Ostrava" @(Model.CurrentCity == "Ostrava" ? "selected" : "")>Ostrava</option>
+                    <option value="Praha" @(Model.CurrentCity == "Praha" ? "selected" : "")>Praha</option>
+                    <option value="Prostějov" @(Model.CurrentCity == "Prostějov" ? "selected" : "")>Prostějov</option>
+                </select>
+                <button id="confirmButton">Potvrdit</button>
+            </form>
+        </div>
+        <div class="weatherInfoHeading">
+            <h1 class="weatherCity">@Model.CurrentCity</h1>
+            <img class="weatherIcon" src="@Model.IconPath" alt="Weather Icon">
+        </div>
+        <div class="currentDayDate">
+            <p>@Model.CurrentDay, @Model.CurrentDate</p>
+        </div>
+
+
+        <div class="weatherInfo">
+            <div class="leftColumn">
+                <div class="weatherInfoCard">
+                    <i class="fas fa-thermometer-half temperature-icon"></i>
+                    <div>
+                        <p>Teplota</p>
+                        <p class="weatherCardTemp">@Model.CurrentTemp&deg;C</p>
+                    </div>
+                </div>
+                <div class="weatherInfoCard">
+                    <i class="fas fa-tint humidity-icon"></i>
+                    <div>
+                        <p>Vlhkost</p>
+                        <p class="weatherCardHumidity">@Model.Humidity %</p>
+                    </div>
+                </div>
+                <div class="weatherInfoCard">
+                    <i class="fas fa-fire"></i>
+                    <div>
+                        <p>Maximální teplota za 24 hodin:</p>
+                        <p id="weatherMaxTemp">@Model.MaxTemp&deg;C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightColumn">
+                <div class="weatherInfoCard">
+                    <i class="fas fa-wind wind-icon"></i>
+                    <div>
+                        <p>Vítr</p>
+                        <p id="weatherCardWind">@Model.WindSpeed km/h</p>
+                    </div>
+                </div>
+                <div class="weatherInfoCard">
+                    <i class="fas fa-tachometer-alt pressure-icon"></i>
+                    <div>
+                        <p>Tlak</p>
+                        <p id="weatherPressure">@Model.Pressure hPa</p>
+                    </div>
+                </div>
+                <div class="weatherInfoCard">
+                    <i class="fas fa-tachometer-alt fa-snowflake"></i>
+                    <div>
+                        <p>Minimální teplota za 24 hodin:</p>
+                        <p id="weatherMinTemp">@Model.MinTemp&deg;C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p><a href="https://www.freepik.com/free-photo/white-cloud-blue-sky_4201545.htm#query=sky&position=1&from_view=search&track=sph&uuid=f050d284-75fc-486d-ac34-35d5815097e9">Image by lifeforstock</a> on Freepik</p>
+        <p>Data provided by: <a href="https://openweathermap.org/">OpenWeather </a></p>
+    </footer>
+</body>
+</html>

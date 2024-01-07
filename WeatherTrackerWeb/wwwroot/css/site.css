@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #1e1e1e;
+}
+
+html {
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+label {
+    margin-top: 0.5rem;
+    display: block;
+    float: left;
+}
+
+.leftColumn,
+.rightColumn {
+    flex: 1;
+}
+
+.container {
+    background: #add8e7;
+    background-image: url('/images/white-cloud-blue-sky.jpg');
+    padding: 2rem;
+    width: 50%;
+    margin: 4rem auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: 80%;
+    }
+}
+
+.weatherChoosePanel {
+    display: flex;
+    padding: 1rem 0.5rem;
+    margin: 2rem;
+    border: none;
+    border-bottom: 0.5px solid #1e1e1e;
+    outline: none;
+}
+
+#citySelect {
+    padding: 0.5rem;
+    margin: 0 1rem 0.5rem 1rem;
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    border: 1px;
+    border-radius: 10px;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#confirmButton {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    border: 1px;
+    border-radius: 10px;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.weatherInfoHeading {
+    display: flex;
+    justify-content: center;
+}
+
+.weatherIcon {
+    margin-left: 1em;
+}
+
+.currentDayDate {
+    text-align: center;
+}
+
+.weatherInfo {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.weatherInfoCard {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid #1e1e1e;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+    .weatherInfoCard i {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    .weatherInfoCard p {
+        font-size: 14px;
+    }
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
